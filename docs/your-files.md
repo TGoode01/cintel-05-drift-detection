@@ -47,7 +47,7 @@ data/static_data_stellar_analytics.csv
 You may modify the copied dataset as needed for your project,
 or choose your own dataset if appropriate.
 
-# 📊 Drift Analysis Documentation
+#  Drift Analysis Documentation
 
 ## Datasets Compared
 

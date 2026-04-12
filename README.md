@@ -142,3 +142,43 @@ git push -u origin main
 
 - Use the **UP ARROW** and **DOWN ARROW** in the terminal to scroll through past commands.
 - Use `CTRL+f` to find (and replace) text within a file.
+## 🔧 Modification Summary
+
+### What I Added
+
+I made several improvements to the drift detection pipeline:
+
+- **Adjusted Thresholds (Input/Setting Change)**
+  - Lowered the drift thresholds to make detection more sensitive:
+    - Requests: 20 to 15
+    - Errors: 2 to 1
+    - Latency: 1000 to 900
+
+- **Added Percentage Difference Metrics (Logic Change)**
+  - Created new columns to calculate the percentage change between current and reference data for:
+    - Requests
+    - Errors
+    - Latency
+
+---
+
+### Why I Made These Changes
+
+The original thresholds on the higher end. Lowering them allows for more sensitive drift detection.
+
+---
+
+### What I Observed
+
+After running the updated pipeline:
+
+- More drift flags were triggered due to the smaller thresholds
+- The percentage difference metrics made it easier to interpret the scale of changes
+- The pipeline executed successfully with no errors
+- The validation step confirmed that both datasets were complete before analysis
+
+---
+
+### Summary
+
+These changes improved the sensitivity, clarity, and reliability of the drift detection pipeline while maintaining successful execution and output generation.
